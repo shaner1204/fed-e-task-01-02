@@ -1,0 +1,16 @@
+{
+  "name": "fp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01-higher-order-function.js",
+  "dependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon bin/www/js"
+  },
+  "author": "",
+  "license": "ISC"
+}
