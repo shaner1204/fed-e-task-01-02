@@ -2,7 +2,7 @@
   "name": "fp",
   "version": "1.0.0",
   "description": "",
-  "main": "01-higher-order-function.js",
+  "main": "app.js",
   "dependencies": {
     "nodemon": "^2.0.4"
   },
