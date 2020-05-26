@@ -4,6 +4,8 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "folktale": "^2.3.2",
+    "lodash": "^4.17.15",
     "nodemon": "^2.0.4"
   },
   "devDependencies": {},
