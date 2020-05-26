@@ -144,6 +144,29 @@
 // let obj = objGroup({name: 'obj1'}, {name: 'obj2'})
 // console.log(obj)
 
+const cars = [
+    {
+        name: 'aaa',
+        horsepower: 660,
+        dollar_value: 700000,
+        in_stock: true
+    },
+    {
+        name: 'bbb',
+        horsepower: 660,
+        dollar_value: 700000,
+        in_stock: true
+    },
+    {
+        name: 'cccc',
+        horsepower: 660,
+        dollar_value: 700000,
+        in_stock: false
+    }
+]
+const fp = require('lodash/fp')
+// fp.flowRight(fp.prop('in_stock'), fp.last(cars))
+console.log(fp.last(cars))
 
 
 
