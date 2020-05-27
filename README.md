@@ -9,3 +9,9 @@
 ##### 2、标记整理可以看做是标记清除的增强操作，标记阶段的操作和标记清除一致，都会遍历所有的对象，将当前的可达活动对象进行标记，清除阶段会先执行整理，移动对象的位置，让它们可以在地址上产生连续，将活动对象右侧的的范围进行整体回收。
 ##### 3、回收过程采用复制算法 + 标记整理，新生代内存区分为二个等大小空间为【From 和 To】，使用空间为 From，空闲空间为 To，活动对象存储于 From 空间，标记整理后将活动对象拷贝至 To，From 与 To 交换空间完成释放与回收操作。
 ##### 4、为了提高工作效率需使用增量标记算法。原理：【标记增量】就是将当前一整段的垃圾回收操作拆成多个小步，组合完成当前的回收操作。从而替代之前一口气做完的垃圾回收操作。这样可以让垃圾回收与程序交替着完成
+
+#### 代码题1
+##### 练习1：const last = fp.flowRight(fp.prop('in_stock'), fp.last) console.log(last(cars))
+##### 练习2：const firstName = fp.flowRight(fp.prop('name'), fp.first) console.log(firstName(cars))
+##### 练习3：const average = fp.flowRight(fp.reduce(fp.add, 0), fp.map(fp.prop('dollar_value'))) console.log(average(cars), 'flowRight-----平均')
+##### 练习4：const sanitizeNames = fp.flowRight( fp.join('_'), fp.split(' '), fp.toLower) console.log(sanitizeNames(["Hello World"]))

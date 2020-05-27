@@ -146,27 +146,64 @@
 
 const cars = [
     {
-        name: 'aaa',
+        name: 'Ferrari FF',
         horsepower: 660,
-        dollar_value: 700000,
+        dollar_value: 100,
         in_stock: true
     },
     {
         name: 'bbb',
         horsepower: 660,
-        dollar_value: 700000,
+        dollar_value: 200,
         in_stock: true
     },
     {
         name: 'cccc',
         horsepower: 660,
-        dollar_value: 700000,
+        dollar_value: 300,
         in_stock: false
     }
 ]
 const fp = require('lodash/fp')
-// fp.flowRight(fp.prop('in_stock'), fp.last(cars))
-console.log(fp.last(cars))
+// 代码题1：
+// 练习1：使用函数组合 fp.flowRight()重新实现下面这个函数
+// let isLastInStock = function (cars) {
+//     // 获取最后一条数据
+//     let last_car = fp.last(cars)
+//     // 获取最后一条数据的 in_stock 属性值
+//     return fp.prop('in_stock', last_car)
+// }
+// const last = fp.flowRight(fp.prop('in_stock'), fp.last)
+// console.log(last(cars))
+
+// 练习2：使用 fp.flowRight()、fp.prop() 和 fp.first() 获取第一个car 的 name
+// const firstName = fp.flowRight(fp.prop('name'), fp.first)
+// console.log(firstName(cars))
+
+// 练习3：使用帮助函数 _average 重构 averageDollarValue，使用函数组合的方式实现
+let _average = function (xs) {
+    return fp.reduce(fp.add, 0, xs) / xs.length
+}
+let averageDollarValue = function (cars) {
+    let dollar_values = fp.map(function(car) {
+        return car.dollar_value
+    }, cars)
+    return _average(dollar_values)
+}
+console.log(averageDollarValue(cars), '钱')
+
+const average = fp.flowRight(fp.reduce(fp.add, 0), fp.map(fp.prop('dollar_value')))
+console.log(average(cars), 'flowRight-----平均')
+
+// 练习4：使用 flowRight 写一个 sanitizeNames() 函数，返回一个下划线连接的小写字符串，把数组中的 name 转换为这种形式：例如： sanitizeName(["Hello World"]) => ["hello_world"]
+let _underscore = fp.replace(/\w+/g, '_')
+// console.log(_underscore("HelloWorld"))
+// 无须改动，并在 sanitizeNames 中使用它
+const sanitizeNames = fp.flowRight( fp.join('_'), fp.split(' '), fp.toLower)
+console.log(sanitizeNames(["Hello World"]))
+
+
+
 
 
 
