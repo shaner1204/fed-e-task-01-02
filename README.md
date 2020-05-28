@@ -13,5 +13,5 @@
 #### 代码题1
 ##### 练习1：const last = fp.flowRight(fp.prop('in_stock'), fp.last) console.log(last(cars))
 ##### 练习2：const firstName = fp.flowRight(fp.prop('name'), fp.first) console.log(firstName(cars))
-##### 练习3：const average = fp.flowRight(fp.reduce(fp.add, 0), fp.map(fp.prop('dollar_value'))) console.log(average(cars), 'flowRight-----平均')
-##### 练习4：const sanitizeNames = fp.flowRight( fp.join('_'), fp.split(' '), fp.toLower) console.log(sanitizeNames(["Hello World"]))
+##### 练习3：const average = fp.flowRight(_average, fp.map(fp.prop('dollar_value'))) console.log(average(cars), 'flowRight-----平均')
+##### 练习4：const sanitizeNames = fp.flowRight(_underscore, fp.toLower) console.log(sanitizeNames(["Hello World"]))

@@ -190,16 +190,16 @@ let averageDollarValue = function (cars) {
     }, cars)
     return _average(dollar_values)
 }
-console.log(averageDollarValue(cars), '钱')
+// console.log(averageDollarValue(cars), '钱')
 
-const average = fp.flowRight(fp.reduce(fp.add, 0), fp.map(fp.prop('dollar_value')))
+const average = fp.flowRight(_average, fp.map(fp.prop('dollar_value')))
 console.log(average(cars), 'flowRight-----平均')
 
 // 练习4：使用 flowRight 写一个 sanitizeNames() 函数，返回一个下划线连接的小写字符串，把数组中的 name 转换为这种形式：例如： sanitizeName(["Hello World"]) => ["hello_world"]
-let _underscore = fp.replace(/\w+/g, '_')
+let _underscore = fp.replace(/\W+/g, '_')
 // console.log(_underscore("HelloWorld"))
 // 无须改动，并在 sanitizeNames 中使用它
-const sanitizeNames = fp.flowRight( fp.join('_'), fp.split(' '), fp.toLower)
+const sanitizeNames = fp.flowRight(_underscore, fp.toLower)
 console.log(sanitizeNames(["Hello World"]))
 
 
