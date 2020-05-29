@@ -15,3 +15,9 @@
 ##### 练习2：const firstName = fp.flowRight(fp.prop('name'), fp.first) console.log(firstName(cars))
 ##### 练习3：const average = fp.flowRight(_average, fp.map(fp.prop('dollar_value'))) console.log(average(cars), 'flowRight-----平均')
 ##### 练习4：const sanitizeNames = fp.flowRight(_underscore, fp.toLower) console.log(sanitizeNames(["Hello World"]))
+
+#### 代码题2
+##### 练习1：let ex1 = maybe.map(x => fp.reduce(fp.add, 0, x))
+##### 练习2：let ex2 = xs.map(fp.first)
+##### 练习3: let ex3 = safeProp('name', user).map(fp.first)
+##### 练习4: let ex4 = Maybe.of(33).map(x => parseInt(x))
